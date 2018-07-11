@@ -28,9 +28,11 @@ for turn in range(4):
     guess_col = int(raw_input("Guess Col: "))
 
     if guess_row == ship_row and guess_col == ship_col:
-       print "Congratulations! You sunk my battleship!"
+        print "Congratulations! You sunk my battleship!"
+        break 
+    
     else:
-        if (guess_row - 1 < 0 or guess_row - 1 > 5) or (guess_col - 1 < 0 or guess_col - 1 > 5):
+        if (guess_row - 1 < 0 or guess_row - 1 > 4) or (guess_col - 1 < 0 or guess_col - 1 > 4):
             print "Oops, that's not even in the ocean."
         elif(board[guess_row - 1][guess_col - 1] == "X"):
             print "You guessed that one already."
@@ -40,7 +42,8 @@ for turn in range(4):
     print "Turn", turn + 1
     print_board(board)
     
-if turn == 3:
-    print "Game over"
+    if turn == 3:
+         print "Game Over"
+    
     
     
